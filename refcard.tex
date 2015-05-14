@@ -1,0 +1,291 @@
+\documentclass[10pt]{article}
+\usepackage{fullpage}
+\usepackage{lscape}
+\usepackage{fancyvrb}
+\usepackage{nopageno}
+\usepackage[margin=0.5in]{geometry}
+\usepackage[T1]{fontenc}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{.1in}
+
+\newcommand{\Hdr}[1]{{\underline{\Large\bf #1}}\vskip .2in}
+
+\begin{document}
+
+\begin{landscape}
+
+\begin{tabular}{l|l|l}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% First column
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{minipage}[t]{3.25in}
+\raggedright
+
+\Hdr{Data types}
+
+{\tt int}: integer
+
+{\tt float}, {\tt double}: decimal/fraction
+
+{\tt char}: text character
+
+\vskip .2in
+
+\Hdr{Variables}
+
+Declaring a variable:
+\begin{tabbing}
+{\ \hskip .2in} \= Syntax: {\it datatype} {\it varname} {\tt ;}\\
+                \> Examples: \= {\tt int count;}\\
+                \>           \> {\tt double velocity;}
+\end{tabbing}
+
+Assigning a value to a variable:
+\begin{tabbing}
+{\ \hskip .2in} \= Syntax: {\it varname} {\tt =} {\it value} {\tt ;}\\
+                \> Examples: \= {\tt count = 0;}\\
+                \>           \> {\tt velocity = 9.81 * height;}
+\end{tabbing}
+
+\Hdr{Output with {\tt printf}}
+
+\begin{tabbing}
+{\ \hskip .2in} \= Syntax: \= {\tt printf(} {\it format} {\tt );} \\
+                \>         \> {\tt printf(} {\it format}{\tt ,} {\it values} {\tt );}\\
+{}\\
+                \> Examples: \= \verb+printf("Hello, world\n");+\\
+                \>           \> \verb+printf("Count is %i\n", count);+\\
+                \>           \> \verb+printf("Velocity is %.2lf m/s\n",+\\
+                \>           \> \verb+       velocity);+
+\end{tabbing}
+
+\Hdr{Input with {\tt scanf}}
+
+\begin{tabbing}
+{\ \hskip .2in} \= Syntax: \= {\tt scanf(} {\it format}{\tt , \&} {\it varname} {\tt);} \\
+{}\\
+                \> Examples: \= \verb+scanf("%i", &count);+\\
+                \>           \> \verb+scanf("%lf", &velocity);+\\
+\end{tabbing}
+
+\Hdr{{\tt printf}/{\tt scanf} placeholders}
+
+\begin{quote}
+\begin{tabular}{|c|c|}\hline
+%{\bf Data type} & {\bf Placeholder} \\ \hline\hline
+{\tt int}       & \verb+%i+ or \verb+%d+ \\ \hline
+{\tt float}     & \verb+%f+ \\ \hline
+{\tt double}    & \verb+%lf+ \\ \hline
+{\tt char}      & \verb+%c+ \\ \hline
+\end{tabular}
+\end{quote}
+
+\end{minipage}
+
+&
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Second column
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{minipage}[t]{3in}
+\raggedright
+
+\Hdr{Arithmetic}
+
+\begin{tabbing}
+{\ \hskip .2in} \= Syntax: {\it value} {\it op} {\it value} \\
+                \> {\ \hskip .2in} \= {\it op} is one of: \\
+                \>                 \> {\tt +} : addition (lower precedence) \\
+                \>                 \> {\tt -} : subtraction (lower precedence) \\
+                \>                 \> {\tt *} : multiplication (higher precedence) \\
+                \>                 \> {\tt /} : division (higher precedence) \\
+                \>                 \> {\tt \%} : integer modulus (higher precedence) \\
+\end{tabbing}
+
+\vskip -.15in
+\Hdr{{\tt if/else} statements}
+
+\begin{tabbing}
+{\ \hskip .2in}  \= {\tt if (} {\it condition} {\tt ) \{} \\
+                         \> {\ \hskip .2in} \= {\it statements} \\
+                         \> {\tt \}} \\
+{}\\
+                         \> {\tt if (} {\it condition} {\tt ) \{} \\
+                         \> {\ \hskip .2in} \= {\it statements} \\
+                         \> {\tt \} else \{} \\
+                         \> {\ \hskip .2in} \= {\it statements} \\
+                         \> {\tt \}} \\
+{}\\
+                         \> {\tt if (} {\it condition1} {\tt ) \{} \\
+                         \> {\ \hskip .2in} \= {\it statements} \\
+                         \> {\tt \} else if (} {\it condition2} {\tt ) \{} \\
+                         \> {\ \hskip .2in} \= {\it statements} \\
+                         \> {\tt \} else \{} \\
+                         \> {\ \hskip .2in} \= {\it statements} \\
+                         \> {\tt \}}
+\end{tabbing}
+
+\Hdr{Comparisons}
+
+\begin{tabbing}
+{\ \hskip .2in} \= Syntax: {\it value} {\it op} {\it value} \\
+                \> {\ \hskip .2in} \= {\it op} is one of: \\
+                \>                 \> {\tt ==}, {\tt !=} : equals, does not equal\\
+                \>                 \> {\tt <}, {\tt <=} : less than, less than or equal\\
+                \>                 \> {\tt >}, {\tt >=} : greater than, greater than or equal
+\end{tabbing}
+
+\Hdr{Logic}
+
+\begin{tabbing}
+{\ \hskip .2in} \= Syntax: {\it condition} {\it op} {\it condition} \\
+                \> {\ \hskip .2in} \= {\it op} is one of: \\
+                \>                 \> {\tt ||} : or, true if either condition is true\\
+                \>                 \> {\tt \&\&} : and, true if both conditions are true
+\end{tabbing}
+
+\end{minipage}
+
+&
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Third column
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{minipage}[t]{3in}
+\raggedright
+
+\Hdr{``Keep going'' loop}
+
+\begin{tabbing}
+{\ \hskip .2in}  \= {\tt int keep\_going = 1;} \\
+                 \> {\tt while (keep\_going == 1) \{} \\
+                 \> {\ \hskip .2in} \= {\it statements} \\
+                 \> \> {\tt if (} {\it need to stop} {\tt ) \{} \\
+                 \> \> {\ \hskip .2in} \= {\tt keep\_going = 0;} \\
+                 \> \> {\tt \}} \\
+                 \> {\tt \}}
+\end{tabbing}
+
+\Hdr{Loop recipes}
+
+Count from 1 to {\tt n}:
+\begin{Verbatim}[commandchars=@:?]
+  for (int i = 1; i <= n; i++) {
+    :@it:statements??
+  }
+\end{Verbatim}
+
+Count from 0 to {\tt n-1}:
+\begin{Verbatim}[commandchars=@:?]
+  for (int i = 0; i < n; i++) {
+    :@it:statements??
+  }
+\end{Verbatim}
+
+Count down from {\tt n} to 1:
+\begin{Verbatim}[commandchars=@:?]
+  for (int i = n; i >= 1; i--) {
+    :@it:statements??
+  }
+\end{Verbatim}
+
+Count from 1 to {\tt n} by increments:
+\begin{Verbatim}[commandchars=@:?]
+  for (int i = 1; i <= n; i += :@it:incr??) {
+    :@it:statements??
+  }
+\end{Verbatim}
+
+Compute sum of {\tt n} terms:
+\begin{Verbatim}[commandchars=@:?]
+  double sum = 0.0;
+  for (int i = 1; i <= n; i++) {
+    double term = :@it:compute term i??;
+    sum += term;
+  }
+\end{Verbatim}
+
+%\vskip .1in
+\begin{flushright}
+\fbox{More on other side $\rightarrow$}\hspace{.15in}{\ }
+\end{flushright}
+
+\hrule
+\vskip .05in
+{\scriptsize Copyright (C) 2013--2015, David H. Hovemeyer\\
+Version 0.2, CC-BY-SA 4.0}
+
+\end{minipage}
+
+\end{tabular}
+
+\end{landscape}
+
+\newpage
+
+\begin{landscape}
+
+\begin{tabular}{l|l|l}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% First column
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{minipage}[t]{3in}
+\Hdr{Arrays}
+
+One dimensional
+
+Two dimensional
+
+Examples
+
+\vskip .2in
+\Hdr{Function prototypes}
+
+Syntax
+
+Examples
+
+\vskip .2in
+\Hdr{Function definitions}
+
+Syntax
+
+Examples
+
+\end{minipage}
+
+&
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Second column
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{minipage}[t]{3in}
+Yah
+\end{minipage}
+
+&
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Third column
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{minipage}[t]{3in}
+Rah
+\end{minipage}
+
+%\begin{center}
+%{\Huge\bf Good luck!}\\
+%{\makebox[.25in]{}}{\Large ...and don't panic!}
+%\end{center}
+
+\end{tabular}
+
+\end{landscape}
+
+\end{document}
+
